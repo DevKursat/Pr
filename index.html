@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="tr" data-lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Kürşat Yılmaz | Product Builder & Entrepreneur</title>
+    <meta name="description" content="Yazılım ve tasarımda sıfırdan ürüne, hızla hayata geçiren girişimci. AI destekli projeler, sosyal etki platformları ve yenilikçi çözümler.">
+    <meta name="keywords" content="Kürşat Yılmaz, entrepreneur, product builder, AI, startup, developer, Turkey">
+    <meta name="author" content="Kürşat Yılmaz">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kürşat Yılmaz | Product Builder & Entrepreneur">
+    <meta property="og:description" content="Yazılım ve tasarımda sıfırdan ürüne, hızla hayata geçiren girişimci.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devkursat.github.io/Pr/">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kürşat Yılmaz | Product Builder & Entrepreneur">
+    <meta name="twitter:description" content="Yazılım ve tasarımda sıfırdan ürüne, hızla hayata geçiren girişimci.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">K</div>
+            <div class="loader-text">
+                <span data-tr="Yükleniyor" data-en="Loading">Yükleniyor</span>
+                <span class="loader-dots">
+                    <span>.</span><span>.</span><span>.</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="tr" aria-label="Türkçe">
+            TR
+        </button>
+        <span class="lang-divider">/</span>
+        <button class="lang-btn" data-lang="en" aria-label="English">
+            EN
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-logo">
+            <a href="#hero">K.</a>
+        </div>
+        <div class="nav-links">
+            <a href="#about" class="nav-link" data-tr="Hakkımda" data-en="About">Hakkımda</a>
+            <a href="#projects" class="nav-link" data-tr="Projeler" data-en="Projects">Projeler</a>
+            <a href="#skills" class="nav-link" data-tr="Beceriler" data-en="Skills">Beceriler</a>
+            <a href="#contact" class="nav-link" data-tr="İletişim" data-en="Contact">İletişim</a>
+        </div>
+        <div class="nav-menu-btn" aria-label="Menu">
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <a href="#about" class="mobile-link" data-tr="Hakkımda" data-en="About">Hakkımda</a>
+            <a href="#projects" class="mobile-link" data-tr="Projeler" data-en="Projects">Projeler</a>
+            <a href="#skills" class="mobile-link" data-tr="Beceriler" data-en="Skills">Beceriler</a>
+            <a href="#contact" class="mobile-link" data-tr="İletişim" data-en="Contact">İletişim</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+            <div class="grid-overlay"></div>
+            <div class="noise-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge" data-scroll="fade-up" data-scroll-delay="0">
+                <span class="badge-dot"></span>
+                <span data-tr="Yeni projelere açık" data-en="Open to new projects">Yeni projelere açık</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line" data-scroll="fade-up" data-scroll-delay="100">
+                    <span data-tr="Merhaba, ben" data-en="Hi, I'm">Merhaba, ben</span>
+                </span>
+                <span class="title-line name-line" data-scroll="fade-up" data-scroll-delay="200">
+                    <span class="word highlight">Kürşat</span>
+                    <span class="word highlight">Yılmaz</span>
+                </span>
+            </h1>
+            <div class="hero-roles" data-scroll="fade-up" data-scroll-delay="300">
+                <span class="role">Entrepreneur</span>
+                <span class="role-divider">•</span>
+                <span class="role">Product Builder</span>
+                <span class="role-divider">•</span>
+                <span class="role">Innovator</span>
+            </div>
+            <p class="hero-description" data-scroll="fade-up" data-scroll-delay="400">
+                <span data-tr="Yazılım ve tasarımda" data-en="From idea to product in">Yazılım ve tasarımda</span>
+                <span class="text-gradient" data-tr="sıfırdan ürüne" data-en="software & design">sıfırdan ürüne</span><span data-tr=", hızla hayata geçiren bir girişimci." data-en=", a fast-moving entrepreneur.">, hızla hayata geçiren bir girişimci.</span>
+                <br class="mobile-break">
+                <span data-tr="AI destekli platformlar ve yenilikçi çözümler geliştiriyorum." data-en="I build AI-powered platforms and innovative solutions.">AI destekli platformlar ve yenilikçi çözümler geliştiriyorum.</span>
+            </p>
+            <div class="hero-cta" data-scroll="fade-up" data-scroll-delay="500">
+                <a href="#projects" class="btn btn-primary">
+                    <span data-tr="Projelerimi Keşfet" data-en="Explore Projects">Projelerimi Keşfet</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span data-tr="İletişime Geç" data-en="Get in Touch">İletişime Geç</span>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator" data-scroll="fade-up" data-scroll-delay="600">
+            <div class="scroll-line">
+                <div class="scroll-dot"></div>
+            </div>
+            <span data-tr="Kaydır" data-en="Scroll">Kaydır</span>
+        </div>
+    </section>
+
+    <!-- Marquee Section -->
+    <section class="marquee-section">
+        <div class="marquee">
+            <div class="marquee-content">
+                <span>ENTREPRENEUR</span>
+                <span class="marquee-dot">◆</span>
+                <span>PRODUCT BUILDER</span>
+                <span class="marquee-dot">◆</span>
+                <span>AI ENTHUSIAST</span>
+                <span class="marquee-dot">◆</span>
+                <span>FULL STACK</span>
+                <span class="marquee-dot">◆</span>
+                <span>BOXER</span>
+                <span class="marquee-dot">◆</span>
+                <span>MUSICIAN</span>
+                <span class="marquee-dot">◆</span>
+                <span>POET</span>
+                <span class="marquee-dot">◆</span>
+                <span>AUTHOR</span>
+                <span class="marquee-dot">◆</span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                <span>ENTREPRENEUR</span>
+                <span class="marquee-dot">◆</span>
+                <span>PRODUCT BUILDER</span>
+                <span class="marquee-dot">◆</span>
+                <span>AI ENTHUSIAST</span>
+                <span class="marquee-dot">◆</span>
+                <span>FULL STACK</span>
+                <span class="marquee-dot">◆</span>
+                <span>BOXER</span>
+                <span class="marquee-dot">◆</span>
+                <span>MUSICIAN</span>
+                <span class="marquee-dot">◆</span>
+                <span>POET</span>
+                <span class="marquee-dot">◆</span>
+                <span>AUTHOR</span>
+                <span class="marquee-dot">◆</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-intro">
+                <div class="section-label" data-scroll="fade-right">
+                    <span class="label-line"></span>
+                    <span data-tr="01 — Hakkımda" data-en="01 — About">01 — Hakkımda</span>
+                </div>
+                <h2 class="about-title" data-scroll="fade-up">
+                    <span data-tr="Fikirlerimi" data-en="I turn my ideas into">Fikirlerimi</span>
+                    <span class="text-gradient" data-tr="hızla" data-en="reality">hızla</span>
+                    <span data-tr="gerçeğe dönüştüren bir girişimciyim." data-en="quickly as an entrepreneur.">gerçeğe dönüştüren bir girişimciyim.</span>
+                </h2>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="about-lead" data-scroll="fade-up">
+                            <span class="text-gradient" data-tr="20 yaşında" data-en="At 20 years old">20 yaşında</span><span data-tr=", İstanbul'dan dünyaya uzanan projeler geliştiriyorum." data-en=", I'm building projects from Istanbul to the world.">, İstanbul'dan dünyaya uzanan projeler geliştiriyorum.</span>
+                        </p>
+                        <p data-scroll="fade-up" data-scroll-delay="100">
+                            <span data-tr="Kendimi her alanda geliştirmeye açık, yenilikçi bir gencim. Yazılım benim için sadece bir araç değil — problemleri çözmenin ve eğlenmenin en yaratıcı yolu." data-en="I'm a young innovator open to self-improvement in every field. Software isn't just a tool for me — it's the most creative way to solve problems and have fun.">Kendimi her alanda geliştirmeye açık, yenilikçi bir gencim. Yazılım benim için sadece bir araç değil — problemleri çözmenin ve eğlenmenin en yaratıcı yolu.</span>
+                        </p>
+                        <p data-scroll="fade-up" data-scroll-delay="200">
+                            <span data-tr="Hedefim? Kendi şirketimi global ölçekte büyütmek ve uzaktan yönetirken huzurlu bir hayat yaşamak." data-en="My goal? Growing my own company globally while living a peaceful life managing it remotely.">Hedefim? Kendi şirketimi global ölçekte büyütmek ve uzaktan yönetirken huzurlu bir hayat yaşamak.</span>
+                        </p>
+                    </div>
+                    
+                    <div class="about-stats" data-scroll="fade-up" data-scroll-delay="300">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="15">0</span>
+                            <span class="stat-label" data-tr="Proje" data-en="Projects">Proje</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="10">0</span>
+                            <span class="stat-label" data-tr="Teknoloji" data-en="Technologies">Teknoloji</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="5">0</span>
+                            <span class="stat-label" data-tr="Yıl Deneyim" data-en="Years Exp.">Yıl Deneyim</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual" data-scroll="fade-left">
+                    <div class="visual-card">
+                        <div class="card-glow"></div>
+                        <h3 data-tr="Kodlamanın Ötesinde" data-en="Beyond Coding">Kodlamanın Ötesinde</h3>
+                        <div class="hobbies-list">
+                            <div class="hobby-item" data-scroll="fade-up" data-scroll-delay="0">
+                                <div class="hobby-icon">🥊</div>
+                                <div class="hobby-info">
+                                    <span class="hobby-title" data-tr="Lisanslı Boksör" data-en="Licensed Boxer">Lisanslı Boksör</span>
+                                    <span class="hobby-desc" data-tr="Disiplin ve azim" data-en="Discipline & determination">Disiplin ve azim</span>
+                                </div>
+                            </div>
+                            <div class="hobby-item" data-scroll="fade-up" data-scroll-delay="100">
+                                <div class="hobby-icon">🎵</div>
+                                <div class="hobby-info">
+                                    <span class="hobby-title" data-tr="Müzisyen" data-en="Musician">Müzisyen</span>
+                                    <span class="hobby-desc" data-tr="Spotify'da dinle" data-en="Listen on Spotify">Spotify'da dinle</span>
+                                </div>
+                            </div>
+                            <div class="hobby-item" data-scroll="fade-up" data-scroll-delay="200">
+                                <div class="hobby-icon">✍️</div>
+                                <div class="hobby-info">
+                                    <span class="hobby-title" data-tr="Şair & Yazar" data-en="Poet & Author">Şair & Yazar</span>
+                                    <span class="hobby-desc" data-tr="Kitap yazıyorum" data-en="Writing a book">Kitap yazıyorum</span>
+                                </div>
+                            </div>
+                            <div class="hobby-item" data-scroll="fade-up" data-scroll-delay="300">
+                                <div class="hobby-icon">🚀</div>
+                                <div class="hobby-info">
+                                    <span class="hobby-title">Entrepreneur</span>
+                                    <span class="hobby-desc" data-tr="Sürekli inşa halinde" data-en="Always building">Sürekli inşa halinde</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-label" data-scroll="fade-right">
+                <span class="label-line"></span>
+                <span data-tr="02 — Projeler" data-en="02 — Projects">02 — Projeler</span>
+            </div>
+            <h2 class="projects-title" data-scroll="fade-up">
+                <span data-tr="Fikirden ürüne," data-en="From idea to product,">Fikirden ürüne,</span>
+                <span class="text-gradient" data-tr="çözümden etkiye." data-en="from solution to impact.">çözümden etkiye.</span>
+            </h2>
+            
+            <!-- Featured Projects -->
+            <div class="featured-projects">
+                <article class="project-card featured" data-project="risko" data-scroll="scale-up">
+                    <div class="project-visual">
+                        <div class="project-gradient" style="--gradient: linear-gradient(135deg, #00D9FF, #0099CC)"></div>
+                        <div class="project-pattern"></div>
+                        <div class="project-icon">🌍</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-category">AI Platform</span>
+                            <span class="project-status active" data-tr="Aktif" data-en="Active">Aktif</span>
+                        </div>
+                        <h3 class="project-title">Risko</h3>
+                        <p class="project-description" data-tr="AI destekli afet risk analiz platformu" data-en="AI-powered disaster risk analysis platform">
+                            AI destekli afet risk analiz platformu
+                        </p>
+                        <div class="project-footer">
+                            <div class="project-tech-mini">
+                                <span>Python</span>
+                                <span>FastAPI</span>
+                                <span>+3</span>
+                            </div>
+                            <button class="project-expand" aria-label="Detayları gör">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card featured" data-project="linkedin-agent" data-scroll="scale-up" data-scroll-delay="100">
+                    <div class="project-visual">
+                        <div class="project-gradient" style="--gradient: linear-gradient(135deg, #0077B5, #00A0DC)"></div>
+                        <div class="project-pattern"></div>
+                        <div class="project-icon">🤖</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-category" data-tr="Otomasyon" data-en="Automation">Otomasyon</span>
+                            <span class="project-status active" data-tr="Aktif" data-en="Active">Aktif</span>
+                        </div>
+                        <h3 class="project-title">LinkedIn Agent</h3>
+                        <p class="project-description" data-tr="Otomatik içerik yönetimi botu" data-en="Automated content management bot">
+                            Otomatik içerik yönetimi botu
+                        </p>
+                        <div class="project-footer">
+                            <div class="project-tech-mini">
+                                <span>Python</span>
+                                <span>Gemini</span>
+                                <span>+2</span>
+                            </div>
+                            <button class="project-expand" aria-label="Detayları gör">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card featured" data-project="iyilik-zinciri" data-scroll="scale-up" data-scroll-delay="200">
+                    <div class="project-visual">
+                        <div class="project-gradient" style="--gradient: linear-gradient(135deg, #FF6B6B, #FF8E53)"></div>
+                        <div class="project-pattern"></div>
+                        <div class="project-icon">💫</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-category" data-tr="Sosyal Etki" data-en="Social Impact">Sosyal Etki</span>
+                            <span class="project-status active" data-tr="Aktif" data-en="Active">Aktif</span>
+                        </div>
+                        <h3 class="project-title">İyilik Zinciri</h3>
+                        <p class="project-description" data-tr="AI destekli iyilik görev platformu" data-en="AI-powered kindness task platform">
+                            AI destekli iyilik görev platformu
+                        </p>
+                        <div class="project-footer">
+                            <div class="project-tech-mini">
+                                <span>JavaScript</span>
+                                <span>AI</span>
+                                <span>+2</span>
+                            </div>
+                            <button class="project-expand" aria-label="Detayları gör">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card featured" data-project="aura" data-scroll="scale-up" data-scroll-delay="300">
+                    <div class="project-visual">
+                        <div class="project-gradient" style="--gradient: linear-gradient(135deg, #667EEA, #764BA2)"></div>
+                        <div class="project-pattern"></div>
+                        <div class="project-icon">✨</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-category">Lifestyle</span>
+                            <span class="project-status active" data-tr="Aktif" data-en="Active">Aktif</span>
+                        </div>
+                        <h3 class="project-title">Aura</h3>
+                        <p class="project-description" data-tr="Yaşam tarzı süper uygulaması" data-en="Lifestyle super app">
+                            Yaşam tarzı süper uygulaması
+                        </p>
+                        <div class="project-footer">
+                            <div class="project-tech-mini">
+                                <span>Next.js</span>
+                                <span>AI</span>
+                                <span>+2</span>
+                            </div>
+                            <button class="project-expand" aria-label="Detayları gör">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Other Projects -->
+            <h3 class="other-projects-title" data-scroll="fade-up" data-tr="Diğer Projeler" data-en="Other Projects">Diğer Projeler</h3>
+            <div class="projects-grid">
+                <article class="project-mini" data-project="lusid" data-scroll="fade-up" data-scroll-delay="0">
+                    <div class="mini-header">
+                        <div class="mini-icon" style="--color: #00D9FF">📚</div>
+                        <span class="mini-status active" data-tr="Aktif" data-en="Active">Aktif</span>
+                    </div>
+                    <h4>Lusid</h4>
+                    <p data-tr="Kitap & günlük yazma, rüya yorumlama platformu" data-en="Book & journal writing, dream interpretation platform">Kitap & günlük yazma, rüya yorumlama platformu</p>
+                </article>
+
+                <article class="project-mini" data-project="viralwave" data-scroll="fade-up" data-scroll-delay="50">
+                    <div class="mini-header">
+                        <div class="mini-icon" style="--color: #FF0050">📱</div>
+                        <span class="mini-status waiting" data-tr="Beklemede" data-en="On Hold">Beklemede</span>
+                    </div>
+                    <h4>ViralWaveAi</h4>
+                    <p data-tr="TikTok trend analizi ve organik büyüme" data-en="TikTok trend analysis and organic growth">TikTok trend analizi ve organik büyüme</p>
+                </article>
+
+                <article class="project-mini" data-project="vera" data-scroll="fade-up" data-scroll-delay="100">
+                    <div class="mini-header">
+                        <div class="mini-icon" style="--color: #FF6B6B">🍽️</div>
+                        <span class="mini-status waiting" data-tr="Beklemede" data-en="On Hold">Beklemede</span>
+                    </div>
+                    <h4>Vera</h4>
+                    <p data-tr="AI garsonlu yemek satış platformu" data-en="AI waiter food delivery platform">AI garsonlu yemek satış platformu</p>
+                </article>
+
+                <article class="project-mini" data-project="veraqr" data-scroll="fade-up" data-scroll-delay="150">
+                    <div class="mini-header">
+                        <div class="mini-icon" style="--color: #FF8E53">📋</div>
+                        <span class="mini-status active" data-tr="Aktif" data-en="Active">Aktif</span>
+                    </div>
+                    <h4>VeraQR</h4>
+                    <p data-tr="Teknolojik QR menü sistemi" data-en="Tech QR menu system">Teknolojik QR menü sistemi</p>
+                </article>
+
+                <article class="project-mini" data-project="kursat-social" data-scroll="fade-up" data-scroll-delay="200">
+                    <div class="mini-header">
+                        <div class="mini-icon" style="--color: #E1306C">🇹🇷</div>
+                        <span class="mini-status active" data-tr="Aktif" data-en="Active">Aktif</span>
+                    </div>
+                    <h4>Kürşat</h4>
+                    <p data-tr="Yerli ve milli sosyal medya" data-en="Local Turkish social media">Yerli ve milli sosyal medya</p>
+                </article>
+
+                <article class="project-mini" data-project="lincard" data-scroll="fade-up" data-scroll-delay="250">
+                    <div class="mini-header">
+                        <div class="mini-icon" style="--color: #39E09B">🔗</div>
+                        <span class="mini-status active" data-tr="Aktif" data-en="Active">Aktif</span>
+                    </div>
+                    <h4>Lincard</h4>
+                    <p data-tr="Link toplama platformu" data-en="Link collection platform">Link toplama platformu</p>
+                </article>
+
+                <article class="project-mini" data-project="voltnet" data-scroll="fade-up" data-scroll-delay="300">
+                    <div class="mini-header">
+                        <div class="mini-icon" style="--color: #00D9FF">⚡</div>
+                        <span class="mini-status active" data-tr="Aktif" data-en="Active">Aktif</span>
+                    </div>
+                    <h4>Voltnet</h4>
+                    <p data-tr="Birleşik EV şarj platformu" data-en="Unified EV charging platform">Birleşik EV şarj platformu</p>
+                </article>
+
+                <article class="project-mini" data-project="alove" data-scroll="fade-up" data-scroll-delay="350">
+                    <div class="mini-header">
+                        <div class="mini-icon" style="--color: #FD297B">❤️</div>
+                        <span class="mini-status active" data-tr="Aktif" data-en="Active">Aktif</span>
+                    </div>
+                    <h4>aLove</h4>
+                    <p data-tr="Modern flört uygulaması" data-en="Modern dating app">Modern flört uygulaması</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-label" data-scroll="fade-right">
+                <span class="label-line"></span>
+                <span data-tr="03 — Teknolojiler" data-en="03 — Technologies">03 — Teknolojiler</span>
+            </div>
+            <h2 class="skills-title" data-scroll="fade-up">
+                <span data-tr="Her proje için" data-en="The right tool for">Her proje için</span>
+                <span class="text-gradient" data-tr="doğru araç." data-en="every project.">doğru araç.</span>
+            </h2>
+            
+            <div class="skills-wheel" data-scroll="fade-up">
+                <div class="wheel-center">
+                    <span class="wheel-text">☀️</span>
+                </div>
+                <!-- Inner Orbit - Core Languages -->
+                <div class="skill-orbit orbit-1">
+                    <div class="skill-planet" style="--angle: 0deg">
+                        TS
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">TypeScript</span>
+                            <span class="tooltip-desc" data-tr="Tip güvenli JavaScript" data-en="Type-safe JavaScript">Tip güvenli JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="skill-planet" style="--angle: 60deg">
+                        JS
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">JavaScript</span>
+                            <span class="tooltip-desc" data-tr="Web'in dili" data-en="Language of the web">Web'in dili</span>
+                        </div>
+                    </div>
+                    <div class="skill-planet" style="--angle: 120deg">
+                        PY
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">Python</span>
+                            <span class="tooltip-desc" data-tr="AI & Backend geliştirme" data-en="AI & Backend development">AI & Backend geliştirme</span>
+                        </div>
+                    </div>
+                    <div class="skill-planet" style="--angle: 180deg">
+                        JV
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">Java</span>
+                            <span class="tooltip-desc" data-tr="Enterprise uygulamalar" data-en="Enterprise applications">Enterprise uygulamalar</span>
+                        </div>
+                    </div>
+                    <div class="skill-planet" style="--angle: 240deg">
+                        KT
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">Kotlin</span>
+                            <span class="tooltip-desc" data-tr="Modern Android geliştirme" data-en="Modern Android development">Modern Android geliştirme</span>
+                        </div>
+                    </div>
+                    <div class="skill-planet" style="--angle: 300deg">
+                        DT
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">Dart</span>
+                            <span class="tooltip-desc" data-tr="Flutter için optimize" data-en="Optimized for Flutter">Flutter için optimize</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Middle Orbit - Frameworks -->
+                <div class="skill-orbit orbit-2">
+                    <div class="skill-planet" style="--angle: 0deg">
+                        ⚛️
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">React</span>
+                            <span class="tooltip-desc" data-tr="UI kütüphanesi" data-en="UI library">UI kütüphanesi</span>
+                        </div>
+                    </div>
+                    <div class="skill-planet" style="--angle: 45deg">
+                        🔺
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">Next.js</span>
+                            <span class="tooltip-desc" data-tr="Full-stack React framework" data-en="Full-stack React framework">Full-stack React framework</span>
+                        </div>
+                    </div>
+                    <div class="skill-planet" style="--angle: 90deg">
+                        💙
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">Flutter</span>
+                            <span class="tooltip-desc" data-tr="Cross-platform mobil" data-en="Cross-platform mobile">Cross-platform mobil</span>
+                        </div>
+                    </div>
+                    <div class="skill-planet" style="--angle: 135deg">
+                        🚀
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">FastAPI</span>
+                            <span class="tooltip-desc" data-tr="Yüksek performans API" data-en="High performance API">Yüksek performans API</span>
+                        </div>
+                    </div>
+                    <div class="skill-planet" style="--angle: 180deg">
+                        📗
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">Node.js</span>
+                            <span class="tooltip-desc" data-tr="JavaScript runtime" data-en="JavaScript runtime">JavaScript runtime</span>
+                        </div>
+                    </div>
+                    <div class="skill-planet" style="--angle: 225deg">
+                        🔥
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">Firebase</span>
+                            <span class="tooltip-desc" data-tr="Google BaaS platformu" data-en="Google BaaS platform">Google BaaS platformu</span>
+                        </div>
+                    </div>
+                    <div class="skill-planet" style="--angle: 270deg">
+                        ⚡
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">Supabase</span>
+                            <span class="tooltip-desc" data-tr="Açık kaynak Firebase alternatifi" data-en="Open source Firebase alternative">Açık kaynak Firebase alternatifi</span>
+                        </div>
+                    </div>
+                    <div class="skill-planet" style="--angle: 315deg">
+                        🤖
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">AI/ML</span>
+                            <span class="tooltip-desc" data-tr="Yapay zeka entegrasyonları" data-en="AI integrations">Yapay zeka entegrasyonları</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Outer Orbit - DevOps & Tools -->
+                <div class="skill-orbit orbit-3">
+                    <div class="skill-planet" style="--angle: 0deg">
+                        🐳
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">Docker</span>
+                            <span class="tooltip-desc" data-tr="Container teknolojisi" data-en="Container technology">Container teknolojisi</span>
+                        </div>
+                    </div>
+                    <div class="skill-planet" style="--angle: 40deg">
+                        🐘
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">PostgreSQL</span>
+                            <span class="tooltip-desc" data-tr="İlişkisel veritabanı" data-en="Relational database">İlişkisel veritabanı</span>
+                        </div>
+                    </div>
+                    <div class="skill-planet" style="--angle: 80deg">
+                        🍃
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">MongoDB</span>
+                            <span class="tooltip-desc" data-tr="NoSQL veritabanı" data-en="NoSQL database">NoSQL veritabanı</span>
+                        </div>
+                    </div>
+                    <div class="skill-planet" style="--angle: 120deg">
+                        🔄
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">Git</span>
+                            <span class="tooltip-desc" data-tr="Versiyon kontrol" data-en="Version control">Versiyon kontrol</span>
+                        </div>
+                    </div>
+                    <div class="skill-planet" style="--angle: 160deg">
+                        ☸️
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">Kubernetes</span>
+                            <span class="tooltip-desc" data-tr="Container orkestrasyon" data-en="Container orchestration">Container orkestrasyon</span>
+                        </div>
+                    </div>
+                    <div class="skill-planet" style="--angle: 200deg">
+                        ☁️
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">AWS</span>
+                            <span class="tooltip-desc" data-tr="Cloud altyapısı" data-en="Cloud infrastructure">Cloud altyapısı</span>
+                        </div>
+                    </div>
+                    <div class="skill-planet" style="--angle: 240deg">
+                        🎨
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">Figma</span>
+                            <span class="tooltip-desc" data-tr="UI/UX tasarım" data-en="UI/UX design">UI/UX tasarım</span>
+                        </div>
+                    </div>
+                    <div class="skill-planet" style="--angle: 280deg">
+                        📱
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">React Native</span>
+                            <span class="tooltip-desc" data-tr="Cross-platform mobil" data-en="Cross-platform mobile">Cross-platform mobil</span>
+                        </div>
+                    </div>
+                    <div class="skill-planet" style="--angle: 320deg">
+                        🔗
+                        <div class="skill-tooltip">
+                            <span class="tooltip-title">REST/GraphQL</span>
+                            <span class="tooltip-desc" data-tr="API mimarileri" data-en="API architectures">API mimarileri</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Skills List -->
+            <div class="skills-mobile">
+                <div class="skill-category" data-scroll="fade-up">
+                    <h3>Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category" data-scroll="fade-up" data-scroll-delay="100">
+                    <h3>Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Kotlin</span>
+                    </div>
+                </div>
+                <div class="skill-category" data-scroll="fade-up" data-scroll-delay="200">
+                    <h3>Mobile</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Flutter</span>
+                        <span class="skill-tag">FlutterFlow</span>
+                        <span class="skill-tag">React Native</span>
+                    </div>
+                </div>
+                <div class="skill-category" data-scroll="fade-up" data-scroll-delay="300">
+                    <h3>Database & DevOps</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Supabase</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="section-label" data-scroll="fade-right">
+                    <span class="label-line"></span>
+                    <span data-tr="04 — İletişim" data-en="04 — Contact">04 — İletişim</span>
+                </div>
+                <h2 class="contact-title" data-scroll="fade-up">
+                    <span data-tr="Birlikte" data-en="Let's create">Birlikte</span>
+                    <span class="text-gradient" data-tr="harika şeyler" data-en="amazing things">harika şeyler</span>
+                    <span data-tr="yaratalım." data-en="together.">yaratalım.</span>
+                </h2>
+                <p class="contact-lead" data-scroll="fade-up" data-scroll-delay="100">
+                    <span data-tr="Yeni projeler, ortaklıklar veya sadece merhaba demek için iletişime geçin." data-en="Get in touch for new projects, partnerships, or just to say hello.">Yeni projeler, ortaklıklar veya sadece merhaba demek için iletişime geçin.</span>
+                </p>
+                <a href="mailto:lusid.help@gmail.com" class="contact-email" data-scroll="fade-up" data-scroll-delay="200">
+                    <span class="email-text">lusid.help@gmail.com</span>
+                    <span class="email-arrow">→</span>
+                </a>
+                <div class="social-links" data-scroll="fade-up" data-scroll-delay="300">
+                    <a href="https://www.linkedin.com/in/k%C3%BCr%C5%9Faty%C4%B1lmaz/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/DevKursat" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://instagram.com/kursat.dev" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://open.spotify.com/intl-tr/artist/5NQc0XkMOuLmfSrgNaz3YP" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Spotify">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                        </svg>
+                        <span>Spotify</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="contact-bg">
+            <div class="gradient-orb orb-contact-1"></div>
+            <div class="gradient-orb orb-contact-2"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <span class="footer-logo">K.</span>
+                    <p><span data-tr="Fikirden ürüne," data-en="From idea to product,">Fikirden ürüne,</span> <span class="text-gradient" data-tr="hızla." data-en="fast.">hızla.</span></p>
+                </div>
+                <div class="footer-right">
+                    <p>© 2025 Kürşat Yılmaz</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="project-modal" id="projectModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Kapat">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+            <div class="modal-content">
+                <div class="modal-visual">
+                    <div class="modal-gradient"></div>
+                    <div class="modal-icon"></div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-meta">
+                        <span class="modal-category"></span>
+                        <span class="modal-status"></span>
+                    </div>
+                    <h2 class="modal-title"></h2>
+                    <p class="modal-description"></p>
+                    <div class="modal-features">
+                        <h4 data-tr="Özellikler" data-en="Features">Özellikler</h4>
+                        <ul class="modal-feature-list"></ul>
+                    </div>
+                    <div class="modal-tech">
+                        <h4 data-tr="Teknolojiler" data-en="Technologies">Teknolojiler</h4>
+                        <div class="modal-tech-list"></div>
+                    </div>
+                    <div class="modal-actions">
+                        <a href="#" class="btn btn-primary modal-link" target="_blank" rel="noopener noreferrer">
+                            <span data-tr="GitHub'da İncele" data-en="View on GitHub">GitHub'da İncele</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
