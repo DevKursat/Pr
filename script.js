@@ -468,32 +468,24 @@ function initCursor() {
 }
 
 // ============================================
-// LOADER WITH PORTAL ZOOM EFFECT
+// LOADER
 // ============================================
 function initLoader() {
     const loader = document.querySelector('.loader');
-    const loaderContent = document.querySelector('.loader-content');
-    
-    // Add portal rings for zoom effect
-    for (let i = 0; i < 3; i++) {
-        const ring = document.createElement('div');
-        ring.className = 'loader-ring';
-        loader.appendChild(ring);
-    }
     
     window.addEventListener('load', () => {
-        // Wait for dots animation to complete a cycle
+        // Wait for dots animation to show
         setTimeout(() => {
-            // Trigger zoom-in portal effect
-            loader.classList.add('zoom-in');
+            // Smooth fade out
+            loader.classList.add('fade-out');
             
-            // After zoom animation, hide loader and show content
+            // After animation, hide completely
             setTimeout(() => {
                 loader.classList.add('hidden');
                 document.body.style.overflow = '';
                 initScrollAnimations();
-            }, 1200);
-        }, 1200);
+            }, 800);
+        }, 1000);
     });
     
     // Prevent scrolling while loading
@@ -889,16 +881,14 @@ const skillsData = [
     { icon: '🔗', name: 'REST/GraphQL', color: '#E10098' }
 ];
 
-let zeroGBalls = [];
+let playgroundBalls = [];
 let animationId = null;
-let deviceMotionEnabled = false;
-let motionAccel = { x: 0, y: 0 };
 
 function initSkillsToggle() {
     const modeBtns = document.querySelectorAll('.mode-btn');
     const gridView = document.querySelector('.skills-grid-view');
     const solarView = document.querySelector('.skills-solar-view');
-    const zeroGView = document.querySelector('.skills-zero-g-view');
+    const playgroundView = document.querySelector('.skills-playground-view');
     
     if (!modeBtns.length) return;
     
@@ -910,82 +900,76 @@ function initSkillsToggle() {
             modeBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             
-            // Hide all views with fade out
-            [gridView, solarView, zeroGView].forEach(view => {
+            // Hide all views
+            [gridView, solarView, playgroundView].forEach(view => {
                 if (view) {
                     view.classList.remove('active');
                 }
             });
             
             // Stop any physics
-            stopZeroGPhysics();
+            stopPlaygroundPhysics();
             
-            // Show selected view with animation delay
+            // Show selected view
             setTimeout(() => {
                 if (mode === 'grid' && gridView) {
                     gridView.classList.add('active');
                 } else if (mode === 'solar' && solarView) {
                     solarView.classList.add('active');
-                } else if (mode === 'zero-g' && zeroGView) {
-                    zeroGView.classList.add('active');
-                    initZeroGPlayground(zeroGView);
+                } else if (mode === 'playground' && playgroundView) {
+                    playgroundView.classList.add('active');
+                    initPlayground(playgroundView);
                 }
             }, 100);
         });
     });
 }
 
-function initZeroGPlayground(container) {
+function initPlayground(container) {
     // Clear previous balls
-    container.querySelectorAll('.zero-g-ball').forEach(b => b.remove());
-    zeroGBalls = [];
+    container.querySelectorAll('.playground-ball').forEach(b => b.remove());
+    playgroundBalls = [];
     
     const containerRect = container.getBoundingClientRect();
     const ballSize = window.innerWidth < 768 ? 60 : 70;
     
-    // Create balls with random positions
+    // Create balls starting from top (will drop with gravity)
     skillsData.forEach((skill, index) => {
         const ball = document.createElement('div');
-        ball.className = 'zero-g-ball floating';
+        ball.className = 'playground-ball';
         ball.innerHTML = `
             <span class="ball-icon">${skill.icon}</span>
             <span class="ball-name">${skill.name}</span>
         `;
         ball.style.borderColor = skill.color;
         
-        // Random position across the container
+        // Random position at top, staggered drop
         const x = Math.random() * (containerRect.width - ballSize);
-        const y = Math.random() * (containerRect.height - ballSize);
+        const y = -100 - (index * 25); // Start above, staggered
         
         ball.style.left = x + 'px';
         ball.style.top = y + 'px';
         
-        // Random animation delay for floating effect
-        ball.style.animationDelay = `${Math.random() * 2}s`;
-        
         container.appendChild(ball);
         
-        zeroGBalls.push({
+        playgroundBalls.push({
             el: ball,
             x: x,
             y: y,
-            vx: (Math.random() - 0.5) * 2,
-            vy: (Math.random() - 0.5) * 2,
+            vx: (Math.random() - 0.5) * 3,
+            vy: 0,
             size: ballSize
         });
         
         // Add drag handlers
-        addZeroGDragHandlers(ball, zeroGBalls[zeroGBalls.length - 1], container);
+        addPlaygroundDragHandlers(ball, playgroundBalls[playgroundBalls.length - 1], container);
     });
     
-    // Start zero-gravity physics
-    startZeroGPhysics(container);
-    
-    // Request device motion permission (for iOS 13+)
-    requestDeviceMotion();
+    // Start gravity physics
+    startPlaygroundPhysics(container);
 }
 
-function addZeroGDragHandlers(ball, ballData, container) {
+function addPlaygroundDragHandlers(ball, ballData, container) {
     let isDragging = false;
     let lastX = 0, lastY = 0;
     let lastTime = 0;
@@ -993,7 +977,6 @@ function addZeroGDragHandlers(ball, ballData, container) {
     const onStart = (e) => {
         isDragging = true;
         ball.classList.add('grabbing');
-        ball.classList.remove('floating');
         
         const pos = getEventPos(e);
         lastX = pos.x;
@@ -1019,8 +1002,8 @@ function addZeroGDragHandlers(ball, ballData, container) {
         const now = Date.now();
         const dt = (now - lastTime) / 1000;
         if (dt > 0) {
-            ballData.vx = (pos.x - lastX) / dt * 0.08;
-            ballData.vy = (pos.y - lastY) / dt * 0.08;
+            ballData.vx = (pos.x - lastX) / dt * 0.05;
+            ballData.vy = (pos.y - lastY) / dt * 0.05;
         }
         
         ballData.x = Math.max(0, Math.min(containerRect.width - ballData.size, newX));
@@ -1052,82 +1035,6 @@ function addZeroGDragHandlers(ball, ballData, container) {
     document.addEventListener('touchend', onEnd);
 }
 
-function requestDeviceMotion() {
-    // Check if DeviceMotionEvent is available
-    if (typeof DeviceMotionEvent !== 'undefined') {
-        // iOS 13+ requires permission
-        if (typeof DeviceMotionEvent.requestPermission === 'function') {
-            // Create a button for user interaction (required for iOS)
-            const hint = document.querySelector('.zero-g-hint');
-            if (hint) {
-                hint.style.cursor = 'pointer';
-                hint.addEventListener('click', async () => {
-                    try {
-                        const permission = await DeviceMotionEvent.requestPermission();
-                        if (permission === 'granted') {
-                            enableDeviceMotion();
-                            hint.innerHTML = `
-                                <span class="hint-icon">🪐</span>
-                                <span data-tr="Cihazı hareket ettir!" data-en="Move your device!">Cihazı hareket ettir!</span>
-                            `;
-                        }
-                    } catch (error) {
-                        console.log('Device motion permission denied');
-                    }
-                }, { once: true });
-            }
-        } else {
-            // Non-iOS devices
-            enableDeviceMotion();
-        }
-    }
-    
-    // Also add mouse movement as fallback for desktop
-    addMouseMotionFallback();
-}
-
-function enableDeviceMotion() {
-    deviceMotionEnabled = true;
-    
-    window.addEventListener('devicemotion', (event) => {
-        const accel = event.accelerationIncludingGravity;
-        if (accel) {
-            // Normalize and scale acceleration
-            motionAccel.x = (accel.x || 0) * 0.5;
-            motionAccel.y = (accel.y || 0) * -0.5; // Invert for natural feeling
-        }
-    });
-}
-
-function addMouseMotionFallback() {
-    const zeroGView = document.querySelector('.skills-zero-g-view');
-    if (!zeroGView) return;
-    
-    let lastMouseX = 0;
-    let lastMouseY = 0;
-    
-    zeroGView.addEventListener('mousemove', (e) => {
-        const rect = zeroGView.getBoundingClientRect();
-        const mouseX = e.clientX - rect.left;
-        const mouseY = e.clientY - rect.top;
-        
-        // Calculate acceleration based on mouse movement
-        const dx = mouseX - lastMouseX;
-        const dy = mouseY - lastMouseY;
-        
-        motionAccel.x = dx * 0.1;
-        motionAccel.y = dy * 0.1;
-        
-        lastMouseX = mouseX;
-        lastMouseY = mouseY;
-    });
-    
-    zeroGView.addEventListener('mouseleave', () => {
-        motionAccel.x = 0;
-        motionAccel.y = 0;
-    });
-}
-
 function getEventPos(e) {
     if (e.touches && e.touches.length) {
         return { x: e.touches[0].clientX, y: e.touches[0].clientY };
@@ -1135,35 +1042,23 @@ function getEventPos(e) {
     return { x: e.clientX, y: e.clientY };
 }
 
-function startZeroGPhysics(container) {
-    const bounce = 0.85;
-    const friction = 0.995;
-    const maxSpeed = 15;
+function startPlaygroundPhysics(container) {
+    const gravity = 0.4;
+    const bounce = 0.7;
+    const friction = 0.99;
     
     function update() {
         const containerRect = container.getBoundingClientRect();
         
-        zeroGBalls.forEach(ball => {
+        playgroundBalls.forEach(ball => {
             if (ball.el.classList.contains('grabbing')) return;
             
-            // Apply motion acceleration (from device or mouse)
-            ball.vx += motionAccel.x * 0.2;
-            ball.vy += motionAccel.y * 0.2;
-            
-            // Add slight random drift for zero-G feeling
-            ball.vx += (Math.random() - 0.5) * 0.1;
-            ball.vy += (Math.random() - 0.5) * 0.1;
+            // Apply gravity
+            ball.vy += gravity;
             
             // Apply friction
             ball.vx *= friction;
             ball.vy *= friction;
-            
-            // Limit max speed
-            const speed = Math.sqrt(ball.vx * ball.vx + ball.vy * ball.vy);
-            if (speed > maxSpeed) {
-                ball.vx = (ball.vx / speed) * maxSpeed;
-                ball.vy = (ball.vy / speed) * maxSpeed;
-            }
             
             // Update position
             ball.x += ball.vx;
@@ -1179,13 +1074,20 @@ function startZeroGPhysics(container) {
                 ball.vx *= -bounce;
             }
             
-            // Bounce off floor/ceiling
-            if (ball.y < 0) {
-                ball.y = 0;
-                ball.vy *= -bounce;
-            }
+            // Bounce off floor
             if (ball.y > containerRect.height - ball.size) {
                 ball.y = containerRect.height - ball.size;
+                ball.vy *= -bounce;
+                
+                // Stop bouncing if very slow
+                if (Math.abs(ball.vy) < 1) {
+                    ball.vy = 0;
+                }
+            }
+            
+            // Bounce off ceiling
+            if (ball.y < 0) {
+                ball.y = 0;
                 ball.vy *= -bounce;
             }
             
@@ -1195,10 +1097,10 @@ function startZeroGPhysics(container) {
         });
         
         // Ball collision detection
-        for (let i = 0; i < zeroGBalls.length; i++) {
-            for (let j = i + 1; j < zeroGBalls.length; j++) {
-                const b1 = zeroGBalls[i];
-                const b2 = zeroGBalls[j];
+        for (let i = 0; i < playgroundBalls.length; i++) {
+            for (let j = i + 1; j < playgroundBalls.length; j++) {
+                const b1 = playgroundBalls[i];
+                const b2 = playgroundBalls[j];
                 
                 const dx = (b2.x + b2.size/2) - (b1.x + b1.size/2);
                 const dy = (b2.y + b2.size/2) - (b1.y + b1.size/2);
@@ -1217,7 +1119,7 @@ function startZeroGPhysics(container) {
                     b2.x += nx * overlap * 0.5;
                     b2.y += ny * overlap * 0.5;
                     
-                    // Exchange velocities along collision normal
+                    // Exchange velocities
                     const dvx = b1.vx - b2.vx;
                     const dvy = b1.vy - b2.vy;
                     const dvn = dvx * nx + dvy * ny;
@@ -1238,13 +1140,11 @@ function startZeroGPhysics(container) {
     update();
 }
 
-function stopZeroGPhysics() {
+function stopPlaygroundPhysics() {
     if (animationId) {
         cancelAnimationFrame(animationId);
         animationId = null;
     }
-    motionAccel.x = 0;
-    motionAccel.y = 0;
 }
 
 // ============================================

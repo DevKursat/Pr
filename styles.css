@@ -173,16 +173,10 @@ button {
     align-items: center;
     justify-content: center;
     z-index: 10000;
-    transition: opacity 0.8s ease-out, visibility 0.8s;
-    perspective: 1000px;
 }
 
-.loader.zoom-in {
-    background: transparent;
-}
-
-.loader.zoom-in .loader-content {
-    animation: portalZoom 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+.loader.fade-out {
+    animation: loaderFadeOut 0.8s ease-out forwards;
 }
 
 .loader.hidden {
@@ -191,9 +185,23 @@ button {
     pointer-events: none;
 }
 
+@keyframes loaderFadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+}
+
 .loader-content {
     text-align: center;
-    transform-style: preserve-3d;
 }
 
 .loader-logo {
@@ -201,81 +209,36 @@ button {
     font-size: clamp(60px, 15vw, 120px);
     font-weight: 700;
     color: var(--text-primary);
-    animation: pulse 1.5s ease-in-out infinite;
+    animation: logoPulse 1.5s ease-in-out infinite;
     display: inline-block;
     position: relative;
 }
 
-.loader.zoom-in .loader-logo {
-    animation: none;
-    color: var(--accent-primary);
-    text-shadow: 
-        0 0 40px rgba(0, 217, 255, 0.8),
-        0 0 80px rgba(0, 217, 255, 0.6),
-        0 0 120px rgba(0, 217, 255, 0.4);
+.loader.fade-out .loader-logo {
+    animation: logoExit 0.8s ease-out forwards;
 }
 
-@keyframes pulse {
-    0%, 100% { opacity: 0.4; transform: scale(0.98); }
-    50% { opacity: 1; transform: scale(1); }
-}
-
-@keyframes portalZoom {
-    0% {
-        transform: scale(1) translateZ(0);
-        opacity: 1;
+@keyframes logoPulse {
+    0%, 100% { 
+        opacity: 0.5; 
+        transform: scale(0.98);
     }
-    50% {
-        transform: scale(8) translateZ(200px);
+    50% { 
+        opacity: 1; 
+        transform: scale(1);
+    }
+}
+
+@keyframes logoExit {
+    0% {
         opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
     }
     100% {
-        transform: scale(50) translateZ(500px);
         opacity: 0;
-    }
-}
-
-/* Portal Ring Effect */
-.loader-ring {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200px;
-    height: 200px;
-    margin: -100px 0 0 -100px;
-    border: 2px solid transparent;
-    border-radius: 50%;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.loader.zoom-in .loader-ring {
-    animation: ringExpand 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-}
-
-.loader.zoom-in .loader-ring:nth-child(1) {
-    animation-delay: 0s;
-    border-color: rgba(0, 217, 255, 0.6);
-}
-
-.loader.zoom-in .loader-ring:nth-child(2) {
-    animation-delay: 0.1s;
-    border-color: rgba(0, 217, 255, 0.4);
-}
-
-.loader.zoom-in .loader-ring:nth-child(3) {
-    animation-delay: 0.2s;
-    border-color: rgba(0, 217, 255, 0.2);
-}
-
-@keyframes ringExpand {
-    0% {
-        transform: scale(0.5);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(20);
-        opacity: 0;
+        transform: scale(1.1);
+        filter: blur(4px);
     }
 }
 
@@ -1435,8 +1398,8 @@ button {
     align-items: center;
 }
 
-/* Skills Zero-G View */
-.skills-zero-g-view {
+/* Skills Playground View */
+.skills-playground-view {
     display: none;
     position: relative;
     width: 100%;
@@ -1447,11 +1410,11 @@ button {
     overflow: hidden;
 }
 
-.skills-zero-g-view.active {
+.skills-playground-view.active {
     display: block;
 }
 
-.zero-g-hint {
+.playground-hint {
     position: absolute;
     top: 20px;
     left: 50%;
@@ -1460,46 +1423,27 @@ button {
     align-items: center;
     gap: 10px;
     padding: 12px 24px;
-    background: rgba(156, 39, 176, 0.15);
-    border: 1px solid rgba(156, 39, 176, 0.5);
+    background: rgba(0, 217, 255, 0.1);
+    border: 1px solid var(--accent-primary);
     border-radius: var(--radius-xl);
-    color: #E040FB;
+    color: var(--accent-primary);
     font-size: 0.9rem;
     font-weight: 500;
     z-index: 10;
-    animation: zeroGPulse 2s ease-in-out infinite;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    animation: hintPulse 2s ease-in-out infinite;
 }
 
-.zero-g-hint:hover {
-    background: rgba(156, 39, 176, 0.25);
-    transform: translateX(-50%) scale(1.02);
-}
-
-.hint-icon {
+.playground-hint .hint-icon {
     font-size: 1.3rem;
-    animation: zeroGFloat 3s ease-in-out infinite;
 }
 
-@keyframes zeroGPulse {
-    0%, 100% { 
-        opacity: 1;
-        box-shadow: 0 0 20px rgba(156, 39, 176, 0.3);
-    }
-    50% { 
-        opacity: 0.8;
-        box-shadow: 0 0 30px rgba(156, 39, 176, 0.5);
-    }
+@keyframes hintPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
 }
 
-@keyframes zeroGFloat {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-5px) rotate(10deg); }
-}
-
-/* Zero-G Ball */
-.zero-g-ball {
+/* Playground Ball */
+.playground-ball {
     position: absolute;
     display: flex;
     align-items: center;
@@ -1517,34 +1461,24 @@ button {
     z-index: 5;
 }
 
-.zero-g-ball:hover {
-    border-color: #E040FB;
-    box-shadow: 0 0 25px rgba(224, 64, 251, 0.5);
+.playground-ball:hover {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
 }
 
-.zero-g-ball.grabbing {
+.playground-ball.grabbing {
     cursor: grabbing;
     transform: scale(1.1) !important;
-    box-shadow: 0 0 35px rgba(224, 64, 251, 0.7);
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.6);
     z-index: 100;
-    animation: none !important;
 }
 
-.zero-g-ball.floating {
-    animation: floatBall 4s ease-in-out infinite;
-}
-
-@keyframes floatBall {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-}
-
-.zero-g-ball .ball-icon {
+.playground-ball .ball-icon {
     font-size: 1.5rem;
     margin-bottom: 2px;
 }
 
-.zero-g-ball .ball-name {
+.playground-ball .ball-name {
     font-size: 0.6rem;
     font-weight: 600;
     color: var(--text-secondary);
@@ -2242,25 +2176,31 @@ button {
         font-size: 0.8rem;
     }
     
-    /* Skills Zero-G Mobile */
-    .skills-zero-g-view {
+    /* Skills Solar View - Hide on mobile */
+    .skills-solar-view,
+    .mode-btn[data-mode="solar"] {
+        display: none !important;
+    }
+    
+    /* Skills Playground Mobile */
+    .skills-playground-view {
         height: 400px;
     }
     
-    .zero-g-ball {
+    .playground-ball {
         width: 60px;
         height: 60px;
     }
     
-    .zero-g-ball .ball-icon {
+    .playground-ball .ball-icon {
         font-size: 1.2rem;
     }
     
-    .zero-g-ball .ball-name {
+    .playground-ball .ball-name {
         font-size: 0.5rem;
     }
     
-    .zero-g-hint {
+    .playground-hint {
         padding: 10px 16px;
         font-size: 0.8rem;
     }
